@@ -1,6 +1,5 @@
 <?php
-if ($_POST['theme_name']) {
-    print_r($_POST);
+if (isset($_POST['theme_name'])) {
     create_base_pack_theme($_POST['project_name'], $_POST['theme_name']);
 };
 
@@ -29,8 +28,8 @@ function create_base_pack_theme($base_dir, $theme_name)
     }
     if (file_exists($config_file)) {
         require_once '../' . $base_dir . '/config/settings.inc.php';
-        $help_file = fopen($_SERVER['DOCUMENT_ROOT'] . '/' . $base_dir . '/_base_pack/' . $theme_name . '/prestashop' . _PS_VERSION_ . '.txt', 'w');
-        fwrite($help_file, 'prestashop' . _PS_VERSION_);
+        $help_file = fopen($_SERVER['DOCUMENT_ROOT'] . '/' . $base_dir . '/_base_pack/' . $theme_name . '/prestashop_' . _PS_VERSION_ . '.txt', 'w');
+        fwrite($help_file, 'prestashop_' . _PS_VERSION_);
         fclose($help_file);
     }
 }
@@ -51,7 +50,6 @@ function getPreview($url, $theme_name)
                         if (file_exists($url . '/' . $value . '/' . $value2 . '/preview.jpg')) {
                             $result = '';
                             $result .= 'http://' . $_SERVER['SERVER_NAME'] . '/' . $theme_name . '/' . $value . '/' . $value2 . '/preview.jpg';
-//                            return $result;
                         }
                     } else {
                         if (file_exists($url . '/' . $value . '/' . $value2 . '/preview.jpg')) {

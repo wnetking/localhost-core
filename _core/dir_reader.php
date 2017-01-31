@@ -23,9 +23,9 @@ foreach ($files1 as $key => $value) {
         $files1[$key] != '..' &&
         $files1[$key] != '_core' &&
         $files1[$key] != '_dev' &&
-        $files1[$key] != 'index.php' &&
         $files1[$key] != '.idea' &&
-        $files1[$key] != '.htaccess'
+        $files1[$key] != '.git' &&
+        is_dir($_SERVER['DOCUMENT_ROOT'] . '/' . $value)
     ) {
         if (getPreview($_SERVER['DOCUMENT_ROOT'] . '/' . $value, $value)) {
             $structure[$value][$preview] = getPreview($_SERVER['DOCUMENT_ROOT'] . '/' . $value, $value);
