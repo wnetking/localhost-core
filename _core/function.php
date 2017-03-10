@@ -8,7 +8,7 @@ function create_base_pack_theme($base_dir, $theme_name)
     $path_to_theme = $_SERVER['DOCUMENT_ROOT'] . '/' . $base_dir . '/_base_pack/' . $theme_name;
     $config_file = $_SERVER['DOCUMENT_ROOT'] . '/' . $base_dir . '/config/settings.inc.php';
     $structure = [
-        'sourse' => [
+        'sources' => [
             'psd',
             'custom_html'
         ],
@@ -28,9 +28,7 @@ function create_base_pack_theme($base_dir, $theme_name)
     }
     if (file_exists($config_file)) {
         require_once '../' . $base_dir . '/config/settings.inc.php';
-        $help_file = fopen($_SERVER['DOCUMENT_ROOT'] . '/' . $base_dir . '/_base_pack/' . $theme_name . '/prestashop_' . _PS_VERSION_ . '.txt', 'w');
-        fwrite($help_file, 'prestashop_' . _PS_VERSION_);
-        fclose($help_file);
+        fopen($_SERVER['DOCUMENT_ROOT'] . '/' . $base_dir . '/_base_pack/' . $theme_name . '/prestashop_' . _PS_VERSION_ . '.txt', 'w');
     }
 }
 

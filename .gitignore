@@ -1,3 +1,7 @@
 /.idea/
 /_dev/node_modules/
 /.sass-cache/
+/*
+!/_core
+!/_dev
+!index.php
