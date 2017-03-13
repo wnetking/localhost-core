@@ -138,6 +138,9 @@
         &::before {
           opacity: 1;
         }
+        svg{
+          filter:drop-shadow(0 0 5px rgba(0,0,0,0.4));
+        }
       }
 
       &[href*=not_active] {
@@ -170,6 +173,7 @@
   }
   svg {
     max-width: 20px;
+    transition: all 0.3s linear;
   }
   a {
     text-decoration: none;

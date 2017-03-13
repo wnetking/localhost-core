@@ -9,6 +9,7 @@ $project_name = 'project_name';
 $helper_link = 'helper_link';
 $theme_name = 'theme_name';
 
+require_once 'config.php';
 require_once 'function.php';
 require_once 'templateCore.php';
 
@@ -19,12 +20,8 @@ $dir = $_SERVER['DOCUMENT_ROOT'] . '/';
 $files1 = scandir($dir);
 
 foreach ($files1 as $key => $value) {
-    if ($files1[$key] != '.' &&
-        $files1[$key] != '..' &&
-        $files1[$key] != '_core' &&
-        $files1[$key] != '_dev' &&
-        $files1[$key] != '.idea' &&
-        $files1[$key] != '.git' &&
+    if (
+        !is_exception_dir($files1[$key], $exception_dirs) &&
         is_dir($_SERVER['DOCUMENT_ROOT'] . '/' . $value)
     ) {
         if (getPreview($_SERVER['DOCUMENT_ROOT'] . '/' . $value, $value)) {

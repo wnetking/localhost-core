@@ -102,3 +102,14 @@ function getThemeName($url)
     }
     return 'not_active';
 }
+
+function is_exception_dir($dir_name , $exception_dirs)
+{
+    foreach ($exception_dirs as $dir) {
+        if ($dir_name === $dir) {
+            return true;
+        }
+    }
+
+    return false;
+}
