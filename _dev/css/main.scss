@@ -47,6 +47,7 @@
   background-color: rgb(242, 242, 242);
   background-position: 50% 34px;
   background-repeat: no-repeat;
+  background-size: cover;
   transition: all 0.3s linear;
 
   @media (max-width: 480px) {
@@ -138,8 +139,8 @@
         &::before {
           opacity: 1;
         }
-        svg{
-          filter:drop-shadow(0 0 5px rgba(0,0,0,0.4));
+        svg {
+          filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
         }
       }
 
