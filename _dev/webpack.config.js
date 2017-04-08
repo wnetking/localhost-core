@@ -25,7 +25,8 @@ plugins.push(
 
 module.exports = {
   entry: [
-    './js/main.js'
+    './js/main.js',
+    './css/main.scss'
   ],
   output: {
     path: '../_core/js',
