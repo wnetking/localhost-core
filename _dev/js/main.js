@@ -118,6 +118,7 @@ var _Core = (function () {
     function showProjectDitails() {
         document.addEventListener('click', function (e) {
             if (e.target.classList.item(0) != 'show-details') return;
+            if (!config.isAdminPage) return;
             var body = '',
                 image = e.target.getAttribute('data-image'),
                 prName = e.target.getAttribute('data-project-name'),
@@ -164,6 +165,8 @@ var _Core = (function () {
                 });
 
                 modal.addFooterBtn('Clear Data Base', 'tingle-btn tingle-btn--danger', function () {
+                    var massage = 'Delete all tables from ' + document.getElementById('data-base').innerHTML + ' data base.';
+                    if(!confirm(massage)) return;
                     var xhr = new XMLHttpRequest(),
                         body = 'clear_db=' + document.getElementById('data-base').innerHTML;
                     xhr.open('POST', config.PATH, true);

@@ -98,16 +98,16 @@ class Main
                 $content = '';
                 $db = new SafeMySQL(['db' => _DB_NAME_]);
                 $modules_array = $db->query('SELECT name, version FROM ' . _DB_PREFIX_ . 'module');
-                $modules ='';
-                foreach ($modules_array as $module){
-                    if(preg_match("/^tm/", $module['name']) || $module['name'] == 'sampledatainstall') $modules .= '<tr>' . '<td>'.$module['name'].'</td><td>'.$module['version'].'</td>'.'</tr>';
+                $modules = '';
+                foreach ($modules_array as $module) {
+                    if (preg_match("/^tm/", $module['name']) || $module['name'] == 'sampledatainstall') $modules .= '<tr>' . '<td>' . $module['name'] . '</td><td>' . $module['version'] . '</td>' . '</tr>';
                 }
                 $value = Array
                 (
                     'project_name' => $_POST['project_name'],
                     'image' => $_POST['image'],
                     'theme_name' => $_POST['show_theme'],
-                    'shop_name' => $db->getOne('SELECT name FROM ' . _DB_PREFIX_ . 'shop WHERE id_shop = 1'),
+                    'shop_name' => $db->getOne('SELECT value FROM ' . _DB_PREFIX_ . 'configuration WHERE id_configuration = 239'),
                     'prestashop_vesion' => _PS_VERSION_,
                     'shop_create' => _PS_CREATION_DATE_,
                     'data_base' => _DB_NAME_,

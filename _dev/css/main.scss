@@ -1,5 +1,5 @@
-@import "~flexboxgrid/dist/flexboxgrid.min.css";
-@import "~tingle.js/dist/tingle.min.css";
+@import '~flexboxgrid/dist/flexboxgrid.min.css';
+@import '~tingle.js/dist/tingle.min.css';
 
 .nav {
   position: relative;
@@ -17,14 +17,12 @@
     padding-left: 0;
     list-style: none;
 
-    li {
-      a {
-        display: block;
-        padding: 5px 15px;
-        background: rgb(242, 242, 242);
-        border: 1px solid rgba(150, 150, 150, 0.3137254901960784);
-        text-align: center;
-      }
+    a {
+      padding: 5px 15px;
+      display: block;
+      background: rgb(242, 242, 242);
+      border: 1px solid rgba(150, 150, 150, 0.3137254901960784);
+      text-align: center;
     }
   }
 
@@ -47,7 +45,7 @@
   }
 }
 
-[class*='col-'] {
+main [class*='col-'] {
   @media (min-width: 1600px) {
     flex-basis: 8.33333333%;
     max-width: 8.33333333%;
@@ -302,4 +300,8 @@ table {
   td {
     padding: 10px;
   }
+}
+
+img {
+  max-width: 100%;
 }

@@ -99,13 +99,11 @@ class Functions
                 foreach ($themes as $key2 => $value2) {
                     if (preg_match("/theme/", $value2)) {
                         return $value2;
-                    } else if (preg_match("/default/", $value2)) {
-                        return $value2;
                     }
                 }
             }
         }
-        return 'not_active';
+        return 'default-bootstrap';
     }
 
     static public function is_exception_dir($dir_name, $exception_dirs)

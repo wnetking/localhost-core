@@ -15,12 +15,12 @@
 </head>
 <body>
 <nav class="nav container"><?php Main::printNav(); ?></nav>
-<div class="container">
+<main class="container">
     <?php if (isset($_POST['path'])) Main::printMassage('succes', Functions::index_fixer()); ?>
     <div class="row">
         <?php Main::printProjects(); ?>
     </div>
-</div>
+</main>
 <div class="pagination"><?php Main::printPagination(); ?></div>
 <script type="text/javascript" src="./_core/js/main.js"></script>
 </body>
