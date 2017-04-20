@@ -53,7 +53,7 @@ class Main
         $value = Array
         (
             'if_link' => PATH . CORE_DIR_NAME . 'index_fixer',
-            'optimazer_link' => PATH . CORE_DIR_NAME . 'optimazer'
+            'optimazer_link' => PATH . CORE_DIR_NAME . 'optimizer'
         );
 
         $content .= $templater->tmp($value, 'nav.tpl');
