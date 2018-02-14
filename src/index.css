@@ -3,3 +3,24 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.navbar-top {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px 0;
+  background-color: #f2f2f2;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.btn {
+  font-size: 12px;
+  display: inline-block;
+  padding: 5px 10px;
+}
+.navbar-top .btn {
+  margin: 0 10px;
+}
+
+.settings-btn {
+  background-repeat: no-repeat;
+  background-position: top 50% left 5px;
+}
