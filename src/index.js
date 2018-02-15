@@ -1,29 +1,18 @@
 import { h, render } from "preact";
 import { Provider } from "preact-redux";
 import configureStore from "./store";
-
-import ProjectList from "./components/projects/components/ProjectList";
-import Info from "./components/details/components/Info";
-import FilterList from "./components/filter/components/FilterList";
-import SettingButton from "./components/settings/components/SettingButton";
+import Root from "./components/Root";
 
 import "./index.css";
 import "./App.css";
 
 const store = configureStore();
 
-const Root = () => (
+render(
   <Provider store={store}>
     <div>
-      <div className="navbar-top">
-        <FilterList />
-        <span className="btn">|</span>
-        <SettingButton />
-      </div>
-      <ProjectList />
-      <Info />
+      <Root />
     </div>
-  </Provider>
+  </Provider>,
+  document.getElementById("root")
 );
-
-render(<Root />, document.getElementById("root"));

@@ -5,33 +5,38 @@ import BaseProjectInfo from "./BaseProjectInfo";
 import ModuleList from "./ModuleList";
 import Button from "./Button";
 import CloseDetails from "./CloseDetails";
+import t from "../../../translations";
 import { clearDbRequest, removeProject } from "../actions";
 
 class Info extends Component {
   render() {
-    let { details, clearDbRequest, removeProject } = this.props;
+    let { details, clearDbRequest, removeProject, settings } = this.props;
     return (
       <div
-        className="project-info"
-        style={{ display: details.show ? "block" : "none" }}
+        className="setting-popup"
+        style={{ display: details.show ? "flex" : "none" }}
       >
         {!details.fatching ? (
-          <div>
+          <div className="setting-inner">
             <CloseDetails />
-            <h2>{`Project Info`}</h2>
-            <BaseProjectInfo data={details.data} />
+            <h2>{t(`Project Info`, settings.lang)}</h2>
+            <BaseProjectInfo />
             <ModuleList data={details.data.modules} />
             <div>
               {details.type !== "other" && details.data ? (
-                <Button
-                  onClick={clearDbRequest.bind(
-                    null,
-                    details.projectName,
-                    details.type
-                  )}
-                >
-                  Clear data base
-                </Button>
+                <span>
+                  <Button
+                    onClick={clearDbRequest.bind(
+                      null,
+                      details.projectName,
+                      details.type
+                    )}
+                  >
+                    {t(`Clear data base`, settings.lang)}
+                  </Button>
+                  <span className="btn">|</span>
+                </span>
+
               ) : (
                 ""
               )}
@@ -42,7 +47,7 @@ class Info extends Component {
                   details.type
                 )}
               >
-                Remove Project
+                {t(`Remove Project`, settings.lang)}
               </Button>
               <p>
                 {details.message ? details.message : ""}

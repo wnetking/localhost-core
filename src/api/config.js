@@ -1,5 +1,5 @@
 export default {
-  BASE_URL: "http://192.168.9.37/_core/",
+  BASE_URL: "/",
   HEADERS: {
     "Content-Type": "application/x-www-form-urlencoded"
   }

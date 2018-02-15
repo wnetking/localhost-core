@@ -1,30 +1,9 @@
 import * as t from "./actionTypes";
 
-export const changeTheme = data => ({
-  type: t.CHANGE_THEME,
+export const changeSettings = data => ({
+  type: t.CHANGE_SETTINGS,
   payload: {
-    theme: data
-  }
-});
-
-export const changeLang = data => ({
-  type: t.CHANGE_LANG,
-  payload: {
-    lang: data
-  }
-});
-
-export const changeHoverEffect = data => ({
-  type: t.CHANGE_HOVER_EFFECT,
-  payload: {
-    hoverEffect: data
-  }
-});
-
-export const changeTypeOfVeiw = data => ({
-  type: t.CHANGE_TYPE_OF_VEIW,
-  payload: {
-    typeOfVeiw: data
+    data
   }
 });
 

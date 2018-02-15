@@ -1,21 +1,75 @@
+:root {
+  --main-bg-color: #fff;
+  --main-color: #000;
+  --navbar-bg-color: #f2f2f2;
+  --navbar-shadow-color: rgba(0, 0, 0, 0.1);
+  --project-bg-base: #f2f2f2;
+  --button-bg-base: buttonface;
+  --grid-col-lg: 8.33333333%;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
 
+h2 {
+  margin-top: 0;
+}
+
+.root-element.dark {
+  --main-bg-color: #2b2b2b;
+  --navbar-bg-color: rgba(25, 25, 25, 0.8);
+  --main-color: hsla(0, 0%, 100%, 0.5);
+  --navbar-shadow-color: transparent;
+  --project-bg-base: #fff;
+  --button-bg-base: #fff;
+}
+
+.grid {
+  --grid-col-lg: 16.66666667%;
+}
+
+.lg-grid {
+  --grid-col-lg: 25%;
+}
+.list {
+  --grid-col-lg: 25%;
+}
+
+.list-with-img {
+  --grid-col-lg: 50%;
+}
+
+.root-element {
+  min-height: 100vh;
+  background-color: var(--main-bg-color);
+  color: var(--main-color);
+  overflow-x: hidden;
+}
+
 .navbar-top {
   text-align: center;
   margin-bottom: 30px;
   padding: 20px 0;
-  background-color: #f2f2f2;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--navbar-bg-color);
+  box-shadow: 0 1px 2px 0 var(--navbar-shadow-color),
+    0 4px 8px 0 var(--navbar-shadow-color);
 }
 .btn {
   font-size: 12px;
   display: inline-block;
   padding: 5px 10px;
 }
+
+button.btn {
+  background-color: var(--button-bg-base);
+}
+.root-element.dark button.btn {
+  border: 1px solid var(--main-bg-color);
+}
+
 .navbar-top .btn {
   margin: 0 10px;
 }
@@ -23,4 +77,92 @@ body {
 .settings-btn {
   background-repeat: no-repeat;
   background-position: top 50% left 5px;
+}
+
+.setting-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.setting-inner {
+  overflow-y: auto;
+  position: relative;
+  width: 500px;
+  height: auto;
+  max-height: 80vh;
+  background-color: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.setting-inner h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.setting-popup .toggle {
+}
+
+.variant-title {
+  display: inline-block;
+  margin-right: 15px;
+  min-width: 30%;
+  font-size: 12px;
+}
+
+select {
+  min-width: 205px;
+  padding: 7px 10px;
+}
+
+.popup-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.module-list {
+  margin-bottom: 30px;
+}
+
+.module-list table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.module-list table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+th,
+td,
+.title {
+  padding: 5px;
+}
+
+td {
+  font-size: 12px;
+}
+
+.base-project-info {
+  padding: 0;
+  list-style: none;
+}
+
+.base-project-info li {
+  padding: 5px;
+}
+
+.base-project-info li:nth-child(odd) {
+  background-color: #f2f2f2;
 }

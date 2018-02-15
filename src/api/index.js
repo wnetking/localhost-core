@@ -4,6 +4,7 @@ export default {
   getProgectList() {
     return fetch(config.BASE_URL, {
       method: "POST",
+      body: `get_project_list=true`,
       headers: config.HEADERS
     })
       .then(response => response.json())

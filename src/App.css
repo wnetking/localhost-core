@@ -5,13 +5,51 @@ img {
 }
 
 .project {
-  border-color: #f2f2f2;
+  border-color: var(--project-bg-base);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin-bottom: 0.9rem;
   border-radius: 2px;
   border: 1px solid hsla(0, 0%, 59%, 0.313725);
-  background-color: #f2f2f2;
+  background-color: var(--project-bg-base);
   transition: all 0.3s linear;
+}
+
+.zoom .project {
+  transition: none;
+  position: relative;
+}
+
+.zoom .project .project-preview {
+  transition: none;
+}
+
+.zoom .project .project-preview:hover {
+  background-position: 50% 0;
+}
+
+.zoom .project:hover {
+  z-index: 5;
+  transform: scale3d(1.5, 1.5, 1);
+}
+
+.zoom .project:hover .project-preview {
+  /* height: 300px; */
+}
+
+.grid .project-preview {
+  height: 300px;
+}
+.lg-grid .project-preview {
+  height: 500px;
+}
+
+.list .project-preview {
+  height: 0;
+}
+
+.list-with-img .project-preview {
+  width: 200px;
+  height: 300px;
 }
 
 .project-preview {
@@ -37,7 +75,7 @@ h5,
   width: 100%;
   margin: 0;
   padding: 10px 5px;
-  background-color: #f2f2f2;
+  background-color: var(--project-bg-base);
   font-size: 12px;
   font-weight: 300;
   color: #000;
@@ -52,7 +90,7 @@ h5,
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: #f2f2f2;
+  background-color: var(--project-bg-base);
   transition: transform 0.3s linear;
   text-align: center;
   list-style: none;
@@ -96,6 +134,7 @@ h5,
   background-color: #fff;
   border-left: 1px solid #969696;
   box-sizing: border-box;
+  color: #000;
 }
 
 .close {

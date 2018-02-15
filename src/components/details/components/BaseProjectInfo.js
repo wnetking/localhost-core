@@ -1,15 +1,37 @@
 import { h, Component } from "preact";
+import { connect } from "preact-redux";
+import t from "../../../translations";
 
-function BaseProjectInfo({ data }) {
+function BaseProjectInfo({ details, settings }) {
+  let { data } = details;
   return (
-    <ul>
-      <li>Project Name : {data.project_name}</li>
-      <li>Shop Name : {data.shop_name}</li>
-      <li>PS version : {data.prestashop_vesion}</li>
-      <li>Create : {new Date(data.shop_create).toLocaleDateString()}</li>
-      <li>Data base name : {data.data_base}</li>
-    </ul>
+    <div>
+      {details.data ? (
+        <ul className="base-project-info">
+          <li>
+            {t(`Project Name`, settings.lang)} : {data.project_name}
+          </li>
+          <li>
+            {t(`Shop Name`, settings.lang)}
+            : {data.shop_name}
+          </li>
+          <li>
+            {t(`PS version`, settings.lang)} : {data.prestashop_vesion}
+          </li>
+          <li>
+            {t(`Create`, settings.lang)}
+            : {new Date(data.shop_create).toLocaleDateString()}
+          </li>
+          <li>
+            {t(`Data base name`, settings.lang)}
+            : {data.data_base}
+          </li>
+        </ul>
+      ) : (
+        ""
+      )}
+    </div>
   );
 }
 
-export default BaseProjectInfo;
+export default connect(state => state)(BaseProjectInfo);

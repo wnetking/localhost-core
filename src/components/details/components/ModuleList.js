@@ -1,22 +1,24 @@
 import { h, Component } from "preact";
+import { connect } from "preact-redux";
+import t from "../../../translations";
 
-function ModuleList({ data }) {
+function ModuleList({ details, settings }) {
   return (
-    <div>
-      {data ? (
+    <div className="module-list">
+      {details.data ? (
         <div>
-          <p>Modules</p>
+          <div class="title">{t(`Modules`, settings.lang)}</div>
           <table>
             <tr>
-              <th>name</th>
-              <th>version</th>
+              <th>{t(`name`, settings.lang)}</th>
+              <th>{t(`version`, settings.lang)}</th>
             </tr>
-            {data.map(item => (
+            {details.data.modules ? details.data.modules.map(item => (
               <tr>
                 <td>{item.name}</td>
                 <td>{item.version}</td>
               </tr>
-            ))}
+            )): ''}
           </table>
         </div>
       ) : (
@@ -26,4 +28,4 @@ function ModuleList({ data }) {
   );
 }
 
-export default ModuleList;
+export default connect(state => state)(ModuleList);
