@@ -14,3 +14,5 @@
 * Очистить базу данных проекта.
 * Настройки (выбор темы, языка, эффекта наведения, типа отображения проекта)
 ***
+
+[gif demo](https://firebasestorage.googleapis.com/v0/b/my-cv-de1f1.appspot.com/o/localhost.gif?alt=media&token=5a0d4529-4d69-45d9-bf01-50219415b711)
